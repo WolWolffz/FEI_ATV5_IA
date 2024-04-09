@@ -59,13 +59,17 @@ def plotAll(y_est, curves):
 
     plt.show()
 
-#o código abaixo executa três diferentes configurações de camadas escondidas do regressor, com 10k eras cada e 10 diferentes iterações para cada configuração, plotando tudo no final
+#o código abaixo executa três diferentes configurações de camadas escondidas do regressor, com x eras cada e y diferentes iterações para cada configuração, plotando tudo no final
 #no console, é printado o melhor erro de cada tentativa para cada configuração
 #após todas as iterações, também é printado a média e e desvio padrão do melhor erro dentre as dez iterações de cada configuração
 #ativarRegressor(limite_total_eras, limite_sem_mudança, qtd_iterações, camadas_escondidas)
-y_est1, loss1, curves1, elapsed1 = ativarRegressor(100000,2000,10,[2])
-y_est2, loss2, curves2, elapsed2 = ativarRegressor(100000,2000,10,[6,2])
-y_est3, loss3, curves3, elapsed3 = ativarRegressor(100000,2000,10,[10,6,4,2])
+eras = 100000
+limite = 2000
+iteracoes = 10
+
+y_est1, loss1, curves1, elapsed1 = ativarRegressor(eras,limite,iteracoes,[2])
+y_est2, loss2, curves2, elapsed2 = ativarRegressor(eras,limite,iteracoes,[6,2])
+y_est3, loss3, curves3, elapsed3 = ativarRegressor(eras,limite,iteracoes,[10,6,4,2])
 
 print("""
       Configuração 1:
